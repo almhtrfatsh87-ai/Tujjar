@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>تجّار | Tujjar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">T</span><span>تجّار <small>TUJJAR</small></span></a>
+    <nav><a href="#products" data-i18n="navProducts">المنتجات</a><a href="#how" data-i18n="navHow">كيف تعمل المنصة</a></nav>
+    <div class="actions">
+      <select id="country" aria-label="Country"></select>
+      <select id="currency" aria-label="Currency"></select>
+      <button id="langBtn" class="ghost">English</button>
+      <button id="cartBtn" class="cart">🛒 <span data-i18n="cart">السلة</span> <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="eyebrow">سوق عالمي • متاجر مستقلة • تجربة واحدة</span>
+        <h1 data-i18n="heroTitle">كل ما تبحث عنه،<br>من متاجر العالم.</h1>
+        <p data-i18n="heroText">اكتشف منتجات مميزة من بائعين مستقلين، أو افتح متجرك وابدأ رحلتك التجارية.</p>
+        <div class="hero-buttons"><a class="primary" href="#products" data-i18n="shopNow">اكتشف المنتجات</a><button class="secondary" id="sellerOpen" data-i18n="openStore">افتح متجرك</button></div>
+        <div class="trust"><span>✓ <span data-i18n="global">متاح حول العالم</span></span><span>✓ <span data-i18n="simple">سهل الاستخدام</span></span><span>✓ <span data-i18n="bilingual">عربي وإنجليزي</span></span></div>
+      </div>
+      <div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="floating-card card-a">🎧 <span>Tech & Gadgets</span></div><div class="floating-card card-b">👟 <span>Style & Fashion</span></div><div class="main-bag">🛍️</div><div class="art-caption">SHOP THE WORLD</div></div>
+    </section>
+
+    <section class="stats"><div><strong>🌍</strong><span data-i18n="countries">وجهات متعددة</span></div><div><strong>🏪</strong><span data-i18n="stores">متاجر مستقلة</span></div><div><strong>✨</strong><span data-i18n="experience">تجربة تسوق بسيطة</span></div></section>
+
+    <section id="products" class="section">
+      <div class="section-head"><div><span class="eyebrow" data-i18n="curated">اختيارات مميزة</span><h2 data-i18n="featured">منتجات تستحق الاكتشاف</h2></div><input id="search" type="search" placeholder="ابحث عن منتج..." data-i18n-placeholder="searchPlaceholder"></div>
+      <div class="filters" id="filters"></div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="how" class="seller-banner"><div><span class="eyebrow" data-i18n="yourBusiness">مشروعك يبدأ هنا</span><h2 data-i18n="sellerTitle">حوّل فكرتك إلى متجر.</h2><p data-i18n="sellerText">اعرض منتجاتك أمام عملاء من أماكن مختلفة. ابدأ بتجربة إنشاء متجر تجريبي الآن.</p></div><button class="primary" id="sellerOpen2" data-i18n="startSelling">ابدأ البيع</button></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">T</span><span>تجّار <small>TUJJAR</small></span></a><p data-i18n="footer">منصة تجارية عالمية تجمع البائعين والمشترين.</p><small>© 2026 Tujjar. <span data-i18n="rights">جميع الحقوق محفوظة.</span></small></footer>
+
+  <dialog id="sellerDialog">
+    <form method="dialog" id="sellerForm">
+      <button class="close" value="cancel" aria-label="Close">×</button>
+      <span class="eyebrow" data-i18n="sellerSetup">إعداد المتجر</span><h2 data-i18n="createStore">أنشئ متجرك التجريبي</h2>
+      <label data-i18n="storeName">اسم المتجر</label><input id="storeName" required maxlength="45" placeholder="مثال: متجر النور">
+      <label data-i18n="sellerName">اسم البائع</label><input id="sellerName" required maxlength="45" placeholder="اسمك">
+      <label data-i18n="productName">اسم أول منتج</label><input id="newProduct" required maxlength="60" placeholder="اسم المنتج">
+      <label data-i18n="price">السعر</label><input id="newPrice" required type="number" min="0.01" step="0.01" placeholder="25">
+      <button class="primary full" type="submit" data-i18n="create">إنشاء المتجر وإضافة المنتج</button>
+      <p class="note" data-i18n="demoNote">هذه نسخة تجريبية تحفظ البيانات على هذا الجهاز فقط.</p>
+    </form>
+  </dialog>
+
+  <dialog id="cartDialog">
+    <form method="dialog"><button class="close" value="cancel">×</button><h2 data-i18n="yourCart">سلة مشترياتك</h2><div id="cartItems"></div><div class="cart-total"><span data-i18n="total">الإجمالي</span><strong id="cartTotal"></strong></div><p class="note" data-i18n="checkoutNote">الدفع والشحن الفعليان غير مفعّلين في هذه النسخة التجريبية.</p><button class="primary full" value="cancel" data-i18n="continue">متابعة التسوق</button></form>
+  </dialog>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
